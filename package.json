@@ -1,0 +1,19 @@
+{
+  "name": "buzzchat2.0",
+  "version": "1.0.0",
+  "description": "Đồ Ứng Dụng 02",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+    "client:dev": "npm run dev --prefix client",
+    "server:dev": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "express": "^4.21.1"
+  }
+}
