@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "buzzchat2.0": "file:",
-    "concurrently": "^9.0.1"
+    "concurrently": "^9.0.1",
+    "firebase": "^11.0.1"
   }
 }
