@@ -48,7 +48,7 @@ export default function LoginRegisterPage() {
                                     "transition-all duration-300 ease-in-out"
                                 )}
                             >
-                                Đăng nhập
+                                Sign In
                             </TabsTrigger>
                             <TabsTrigger
                                 value="register"
@@ -57,7 +57,7 @@ export default function LoginRegisterPage() {
                                     "transition-all duration-300 ease-in-out"
                                 )}
                             >
-                                Đăng ký
+                                Sign Up
                             </TabsTrigger>
                         </TabsList>
                         <TabsContent
@@ -76,7 +76,7 @@ export default function LoginRegisterPage() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="password" className="text-gray-700 dark:text-gray-300">Mật khẩu</Label>
+                                    <Label htmlFor="password" className="text-gray-700 dark:text-gray-300">Password</Label>
                                     <Input
                                         id="password"
                                         type="password"
@@ -85,10 +85,10 @@ export default function LoginRegisterPage() {
                                     />
                                 </div>
                                 <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                                    Đăng nhập
+                                    Sign In
                                 </Button>
                                 <div className="text-center">
-                                    <a href="#" className="text-sm text-blue-600 dark:text-purple-400 hover:underline">Quên mật khẩu?</a>
+                                    <a href="#" className="text-sm text-blue-600 dark:text-purple-400 hover:underline">Forget Password ?</a>
                                 </div>
                             </form>
                         </TabsContent>
@@ -98,7 +98,7 @@ export default function LoginRegisterPage() {
                         >
                             <form className="space-y-4">
                                 <div className="space-y-2">
-                                    <Label htmlFor="register-name" className="text-gray-700 dark:text-gray-300">Họ tên</Label>
+                                    <Label htmlFor="register-name" className="text-gray-700 dark:text-gray-300">Full Name</Label>
                                     <Input
                                         id="register-name"
                                         type="text"
@@ -118,7 +118,7 @@ export default function LoginRegisterPage() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="register-password" className="text-gray-700 dark:text-gray-300">Mật khẩu</Label>
+                                    <Label htmlFor="register-password" className="text-gray-700 dark:text-gray-300">Password</Label>
                                     <Input
                                         id="register-password"
                                         type="password"
@@ -127,7 +127,7 @@ export default function LoginRegisterPage() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="register-confirm-password" className="text-gray-700 dark:text-gray-300">Xác nhận mật khẩu</Label>
+                                    <Label htmlFor="register-confirm-password" className="text-gray-700 dark:text-gray-300">Password</Label>
                                     <Input
                                         id="register-confirm-password"
                                         type="password"
@@ -136,7 +136,7 @@ export default function LoginRegisterPage() {
                                     />
                                 </div>
                                 <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                                    Đăng ký
+                                    Sign Up
                                 </Button>
                             </form>
                         </TabsContent>
@@ -150,7 +150,7 @@ export default function LoginRegisterPage() {
                             onCheckedChange={toggleDarkMode}
                             className="bg-gray-300 dark:bg-gray-700"
                         />
-                        <span className="text-sm text-gray-700 dark:text-gray-300">Chế độ tối</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">Dark Mode</span>
                     </Label>
                     {isDarkMode ? (
                         <Sun className="h-5 w-5 text-yellow-400" />
