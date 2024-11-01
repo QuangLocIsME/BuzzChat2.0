@@ -2,7 +2,6 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Buzz Chat - README</title>
 </head>
 <body>
   <h1>Buzz Chat</h1>
