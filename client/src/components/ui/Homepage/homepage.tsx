@@ -1,10 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { Moon, Sun, Home, Settings, User, MessageSquare, Menu, Search, Plus, Send } from 'lucide-react'
+import { Moon, Sun, Home, Settings, User, MessageSquare, Menu, Search, Plus } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { motion } from 'framer-motion'
-
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -23,8 +21,6 @@ import {
     SidebarMenuItem,
     SidebarMenuButton,
     SidebarProvider,
-    SidebarRail,
-    SidebarTrigger,
     SidebarInset,
 } from '@/components/ui/sidebar'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -36,12 +32,6 @@ const chatList = [
         id: 3, name: 'Carol Williams', message: 'I ve sent the report.', time: '3h ago', unread: 1
     },
     { id: 4, name: 'David Brown', message: 'Thanks for your help!', time: '1d ago', unread: 0 },
-]
-
-const recentActivity = [
-    { id: 1, type: 'message', user: 'Alice Johnson', action: 'sent you a message', time: '5 minutes ago' },
-    { id: 2, type: 'file', user: 'Bob Smith', action: 'shared a file', time: '2 hours ago' },
-    { id: 3, type: 'call', user: 'Carol Williams', action: 'started a voice call', time: 'Yesterday' },
 ]
 
 export default function HomePage() {
@@ -113,14 +103,10 @@ export default function HomePage() {
                             </ScrollArea>
                         </div>
                     </SidebarContent>
-                    <SidebarRail />
                 </Sidebar>
                 <SidebarInset className="flex flex-col flex-grow overflow-hidden">
                     <header className="flex items-center justify-between p-4 border-b">
                         <div className="flex items-center space-x-4">
-                            <SidebarTrigger>
-                                <Menu className="h-6 w-6" />
-                            </SidebarTrigger>
                             <div className="relative">
                                 <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transform text-muted-foreground" />
                                 <Input
@@ -160,74 +146,24 @@ export default function HomePage() {
                     </header>
                     <main className="flex-grow p-6 overflow-auto">
                         {activeTab === 'home' && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="space-y-6 h-full"
-                            >
+                            <div className="space-y-6 h-full">
                                 <h1 className="text-3xl font-bold">Welcome back, User!</h1>
-                                <div className="grid gap-6 md:grid-cols-2 h-[calc(100vh-200px)]">
-                                    <div className="space-y-4">
-                                        <h2 className="text-xl font-semibold">Quick Actions</h2>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <Button className="h-24 text-left flex flex-col items-start justify-center">
-                                                <MessageSquare className="mb-2" />
-                                                <span>New Chat</span>
-                                            </Button>
-                                            <Button variant="outline" className="h-24 text-left flex flex-col items-start justify-center">
-                                                <Plus className="mb-2" />
-                                                <span>Create Group</span>
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <div className="space-y-4 flex flex-col">
-                                        <h2 className="text-xl font-semibold">Recent Activity</h2>
-                                        <ScrollArea className="flex-grow rounded-md border p-4">
-                                            {recentActivity.map((activity) => (
-                                                <div key={activity.id} className="flex items-center space-x-4 py-2">
-                                                    <Avatar className="h-8 w-8">
-                                                        <AvatarImage src={`https://api.dicebear.com/6.x/initials/svg?seed=${activity.user}`} />
-                                                        <AvatarFallback>{activity.user.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                                    </Avatar>
-                                                    <div className="flex-1 space-y-1">
-                                                        <p className="text-sm font-medium leading-none">
-                                                            {activity.user} {activity.action}
-                                                        </p>
-                                                        <p className="text-sm text-muted-foreground">
-                                                            {activity.time}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </ScrollArea>
-                                    </div>
-                                </div>
-                            </motion.div>
+                                {/* Nội dung chính của trang chính */}
+                            </div>
                         )}
                         {activeTab === 'settings' && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="space-y-4"
-                            >
+                            <div className="space-y-4">
                                 <h2 className="text-2xl font-semibold">Settings</h2>
                                 <p>Customize your Buzz Chat experience here.</p>
                                 {/* Add more settings options here */}
-                            </motion.div>
+                            </div>
                         )}
                         {activeTab === 'profile' && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="space-y-4"
-                            >
+                            <div className="space-y-4">
                                 <h2 className="text-2xl font-semibold">Your Profile</h2>
                                 <p>Manage your personal information and preferences.</p>
                                 {/* Add more profile options here */}
-                            </motion.div>
+                            </div>
                         )}
                     </main>
                 </SidebarInset>
